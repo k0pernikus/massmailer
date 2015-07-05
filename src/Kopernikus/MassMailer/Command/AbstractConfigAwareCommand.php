@@ -57,6 +57,11 @@ class AbstractConfigAwareCommand extends Command
 
     }
 
+    public function getLiveMailRecievers()
+    {
+        return new RecieversConfig($this->config['live_mail_recievers']);
+    }
+
     /**
      * @return ContentConfig
      */

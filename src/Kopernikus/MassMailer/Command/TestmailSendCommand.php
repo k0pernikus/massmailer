@@ -35,26 +35,10 @@ class TestmailSendCommand extends AbstractMailerCommand
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $recievers = $this->getTestMailRecievers()->getRecievers();
-        $contentConfig = $this->getContentConfig();
-        $mailer = $this->getMailer();
-        $contentPreparer = new ContentPreparer();
+        $recievers = $this
+            ->getTestMailRecievers()
+            ->getRecievers();
 
-        (new RecieverPrinter($output))->printRecievers($recievers);
-
-        foreach ($recievers as $reciever) {
-            $message = $contentPreparer->generateMessage($reciever, $contentConfig);
-
-            try {
-                $mailer->send($message);
-                $status = "<info>Mail sent</info>";
-            } catch (SmtpException $e) {
-                $status = "<error>Mail wasn't sent</error> " . $e->getMessage();
-            } finally {
-                $output->writeln($status);
-            }
-        }
+        $this->sendMails($output, $recievers);
     }
-
-
 }

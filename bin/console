@@ -10,6 +10,7 @@ $app = new Application();
 $commandsToAdd = [
     new \Kopernikus\MassMailer\Command\ConfigDumpCommand(),
     new \Kopernikus\MassMailer\Command\TestmailSendCommand(),
+    new \Kopernikus\MassMailer\Command\MailSendCommand(),
 ];
 
 $app->addCommands($commandsToAdd);

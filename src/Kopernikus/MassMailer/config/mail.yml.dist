@@ -1,25 +1,47 @@
 mail_account:
-  smtp: smtp.gmail.com
-  email: your_email@gmail.com
+  host: smtp.gmail.com
+  user: your_email@gmail.com
   password: YOUR_PASSWORD
-  port: 465
-  useSSL: true
-
+  encryption: ssl
 
 sender:
-  email: your.mail@localhost
-  name: FIRSTNAME LASTNAME
+  # STIL HARDCOFDED
+  email: philipp.kretzchmar@gmail.com
+  name: Philipp Kretzschmar
 
-BCC:
-  - theonesRecievingBlindCopies@localhost
+live_mail_recievers:
+  recievers:
+    -
+      firstname: firstname
+      lastname: lastname
+      email: person1@localhost
+      gender: neutral # doesn't do anything yet
+    -
+      firstname: Jarael
+      lastname: Dafoe
+      email: person2@localhost
+      gender: female
 
-CC:
-  - theonesRecievingBlindCopies@localhostk
+test_mail_recievers:
+  recievers:
+    -
+      firstname: yourName
+      lastname: yourLastName
+      email: yourEmail@localhost
+      gender: neutral
 
 content:
-  subject: This is the subject
-  message: >
+  genderfoo:
+    # doesn't do anything yet
+    male: Mister
+    female: Madame
+  greeting: Hello
+  subject: >
+    This is the subject
+  content: >
     This is the content of your mail. Be careful with your words ;)
-  signature:
+  signature: >
     Keep it short.
-  attachements: ~
+  attachments:
+    - exampleAttachement.txt
+    - pdf-sample.pdf

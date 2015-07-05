@@ -1,11 +1,6 @@
 <?php
 namespace Kopernikus\MassMailer\Command;
 
-use Kopernikus\MassMailer\Service\Mail\ContentPreparer;
-use Kopernikus\MassMailer\Service\Printer\RecieverPrinter;
-use Nette\Mail\Message;
-use Nette\Mail\SmtpException;
-use Nette\Mail\SmtpMailer;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
@@ -39,6 +34,7 @@ class TestmailSendCommand extends AbstractMailerCommand
             ->getTestMailRecievers()
             ->getRecievers();
 
+        $this->printRecievers($output, $recievers);
         $this->sendMails($output, $recievers);
     }
 }

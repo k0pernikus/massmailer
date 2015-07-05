@@ -10,8 +10,12 @@ namespace Kopernikus\MassMailer\Command;
 
 
 use Kopernikus\MassMailer\Service\Config\Reciever;
+use Kopernikus\MassMailer\Service\Mail\ContentPreparer;
 use Kopernikus\MassMailer\Service\MailerFactory;
+use Kopernikus\MassMailer\Service\Printer\RecieverPrinter;
 use Nette\Mail\IMailer;
+use Symfony\Component\Console\Helper\ProgressBar;
+use Symfony\Component\Console\Output\OutputInterface;
 
 class AbstractMailerCommand extends AbstractConfigAwareCommand
 {
@@ -29,21 +33,22 @@ class AbstractMailerCommand extends AbstractConfigAwareCommand
         $contentConfig = $this->getContentConfig();
         $mailer = $this->getMailer();
         $contentPreparer = new ContentPreparer();
-
-        (new RecieverPrinter($output))->printRecievers($recievers);
+        $progress = new ProgressBar($output, count($recievers));
 
         foreach ($recievers as $reciever) {
             $message = $contentPreparer->generateMessage($reciever, $contentConfig);
 
             try {
                 $mailer->send($message);
-                $status = "<info>Mail sent</info>";
+                $progress->advance();
             } catch (SmtpException $e) {
-                $status = "<error>Mail wasn't sent</error> " . $e->getMessage();
-            } finally {
+                $mail = $reciever->getEmail();
+                $status = "<error>Mail wasn't sent to: '$mail'!</error> " . $e->getMessage();
                 $output->writeln($status);
             }
         }
+
+        $output->writeln('');
     }
 
     public function __construct($name = null)
@@ -61,6 +66,15 @@ class AbstractMailerCommand extends AbstractConfigAwareCommand
     public function getMailer()
     {
         return $this->mailer;
+    }
+
+    /**
+     * @param OutputInterface $output
+     * @param array           $recievers
+     */
+    protected function printRecievers(OutputInterface $output, array $recievers)
+    {
+        (new RecieverPrinter($output))->printRecievers($recievers);
     }
 
 

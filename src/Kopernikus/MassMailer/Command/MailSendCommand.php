@@ -2,7 +2,9 @@
 namespace Kopernikus\MassMailer\Command;
 
 
+use Kopernikus\MassMailer\Exception\SendMailFlagNotGivenExceoption;
 use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 
 /**
@@ -16,7 +18,14 @@ class MailSendCommand extends AbstractMailerCommand
     {
         $this
             ->setName('mail:send')
-            ->setDescription('Will send mails to the configured recievers.');
+            ->setDescription('Will send mails to the configured recievers.')
+            ->addOption(
+                'forceSendMails',
+                'f',
+                InputOption::VALUE_NONE,
+                "Will send mails to all the users you defined in your mail.yml."
+            );
+
     }
 
     /**
@@ -25,10 +34,18 @@ class MailSendCommand extends AbstractMailerCommand
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-
+        $shouldSendMails = $input->getOption('forceSendMails');
         $recievers = $this
             ->getLiveMailRecievers()
             ->getRecievers();
+
+        $this->printRecievers($output, $recievers);
+
+
+        if (!$shouldSendMails) {
+            throw new SendMailFlagNotGivenExceoption();
+        }
+
         $this->sendMails($output, $recievers);
     }
 

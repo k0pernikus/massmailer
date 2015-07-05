@@ -3,7 +3,7 @@ namespace Kopernikus\MassMailer\Service\Mail;
 
 
 use Kopernikus\MassMailer\Service\Config\ContentConfig;
-use Kopernikus\MassMailer\Service\Config\RecieverConfig;
+use Kopernikus\MassMailer\Service\Config\Reciever;
 use Nette\Mail\Message;
 
 /**
@@ -12,7 +12,7 @@ use Nette\Mail\Message;
  */
 class ContentPreparer
 {
-    public function generateMessage(RecieverConfig $reciever, ContentConfig $contentConfig)
+    public function generateMessage(Reciever $reciever, ContentConfig $contentConfig)
     {
         $message = new Message();
 

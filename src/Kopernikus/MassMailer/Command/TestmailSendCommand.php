@@ -2,6 +2,7 @@
 namespace Kopernikus\MassMailer\Command;
 
 use Kopernikus\MassMailer\Service\Mail\ContentPreparer;
+use Kopernikus\MassMailer\Service\Printer\RecieverPrinter;
 use Nette\Mail\Message;
 use Nette\Mail\SmtpException;
 use Nette\Mail\SmtpMailer;
@@ -38,6 +39,8 @@ class TestmailSendCommand extends AbstractMailerCommand
         $contentConfig = $this->getContentConfig();
         $mailer = $this->getMailer();
         $contentPreparer = new ContentPreparer();
+
+        (new RecieverPrinter($output))->printRecievers($recievers);
 
         foreach ($recievers as $reciever) {
             $message = $contentPreparer->generateMessage($reciever, $contentConfig);

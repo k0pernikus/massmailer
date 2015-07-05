@@ -101,7 +101,7 @@ class ContentConfig
     /**
      * @return string
      */
-    public function getContent(RecieverConfig $reciever)
+    public function getContent(Reciever $reciever)
     {
         return $this->greeting . " " . $reciever->getFirstname() . "\n\n" . $this->content;
     }

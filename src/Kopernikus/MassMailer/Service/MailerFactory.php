@@ -3,7 +3,6 @@ namespace Kopernikus\MassMailer\Service;
 
 
 use Kopernikus\MassMailer\Service\Config\MailAccountConfig;
-use Nette\Mail\IMailer;
 use Nette\Mail\SmtpMailer;
 
 /**

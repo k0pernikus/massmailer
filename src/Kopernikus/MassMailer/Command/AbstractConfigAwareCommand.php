@@ -11,7 +11,7 @@ namespace Kopernikus\MassMailer\Command;
 
 use Kopernikus\MassMailer\Service\Config\ContentConfig;
 use Kopernikus\MassMailer\Service\Config\MailAccountConfig;
-use Kopernikus\MassMailer\Service\Config\TestRecieversConfig;
+use Kopernikus\MassMailer\Service\Config\RecieversConfig;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Yaml\Yaml;
 
@@ -49,11 +49,11 @@ class AbstractConfigAwareCommand extends Command
     }
 
     /**
-     * @return TestRecieversConfig
+     * @return RecieversConfig
      */
     public function getTestMailRecievers()
     {
-        return new TestRecieversConfig($this->config['test_mail_recievers']);
+        return new RecieversConfig($this->config['test_mail_recievers']);
 
     }
 

@@ -1,21 +1,30 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: wolle
- * Date: 7/5/15
- * Time: 5:25 PM
- */
-
 namespace Kopernikus\MassMailer\Service\Config;
 
-
-use Eden\Mail\Smtp;
-
-class RecieverConfig
+/**
+ * Class Reciever
+ * @package Kopernikus\MassMailer\Service\Config
+ */
+class Reciever
 {
+    /**
+     * @var string
+     */
     private $firstname = '';
+
+    /**
+     * @var string
+     */
     private $lastname = '';
+
+    /**
+     * @var string
+     */
     private $gender = '';
+
+    /**
+     * @var string
+     */
     private $email = '';
 
     /**
@@ -112,6 +121,4 @@ class RecieverConfig
     {
         $this->email = $email;
     }
-
-
 }

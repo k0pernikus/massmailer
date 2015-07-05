@@ -5,10 +5,10 @@ namespace Kopernikus\MassMailer\Service\Config;
  * Class TestRecieversConfig
  * @package Kopernikus\MassMailer\Service\Config
  */
-class TestRecieversConfig
+class RecieversConfig
 {
     /**
-     * @var RecieverConfig[]
+     * @var Reciever[]
      */
     private $recievers;
 
@@ -20,12 +20,12 @@ class TestRecieversConfig
         $recievers = $testMailRecieversConfig['recievers'];
 
         foreach ($recievers as $reciever) {
-            $this->recievers[] = new RecieverConfig($reciever);
+            $this->recievers[] = new Reciever($reciever);
         }
     }
 
     /**
-     * @return RecieverConfig[]
+     * @return Reciever[]
      */
     public function getRecievers()
     {

@@ -1,6 +1,4 @@
-# Under Development, in no useable state as of yet 
-
-# MassMailer
+# MassMailer [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/k0pernikus/massmailer/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/k0pernikus/massmailer/?branch=master)
 
 A little tool to send certain mails to a multitude of recievers.
 

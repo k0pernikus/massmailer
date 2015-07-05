@@ -16,20 +16,6 @@ class MailAccountConfig
      */
     private $host;
 
-    /**
-     * @var bool
-     */
-    private $useTLS;
-
-    /**
-     * @var int
-     */
-    private $port;
-
-    /**
-     * @var bool
-     */
-    private $useSSL;
 
     /**
      * @var string
@@ -41,16 +27,22 @@ class MailAccountConfig
      */
     private $user;
 
+    /**
+     * @var string
+     */
+    private $encryption;
+
+    /**
+     * @param array $config
+     */
+
     function __construct(array $config)
     {
-        list($host, $user, $password, $useSSL, $port, $useTLS) = $this->parseConfig($config);
-
+        list($host, $user, $password, $encryption) = $this->parseConfig($config);
         $this->host = $host;
         $this->user = $user;
         $this->password = $password;
-        $this->useSSL = $useSSL;
-        $this->port = $port;
-        $this->useTLS = $useTLS;
+        $this->encryption = $encryption;
     }
 
     /**
@@ -101,18 +93,27 @@ class MailAccountConfig
         return $this->password;
     }
 
+    /**
+     * @return string
+     */
+    public function getEncryption()
+    {
+        return $this->encryption;
+    }
+
+    /**
+     * @param $mailAccountConfig
+     *
+     * @return array
+     */
     private function parseConfig($mailAccountConfig)
     {
-        $host = $mailAccountConfig['smtp'];
-        $user = $mailAccountConfig['email'];
+        $host = $mailAccountConfig['host'];
+        $user = $mailAccountConfig['user'];
         $password = $mailAccountConfig['password'];
-        $useSSL = $mailAccountConfig['useSSL'];
-        $port = $mailAccountConfig['port'];
-        $useTLS = $mailAccountConfig['useTLS'];
+        $encryption = $mailAccountConfig['encryption'];
 
-        $params = [$host, $user, $password, $useSSL, $port, $useTLS];
-
-        var_dump($params);
+        $params = [$host, $user, $password, $encryption];
 
         return $params;
     }

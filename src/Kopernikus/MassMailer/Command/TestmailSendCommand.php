@@ -1,8 +1,10 @@
 <?php
 namespace Kopernikus\MassMailer\Command;
 
-use Kopernikus\MassMailer\Exception\NotYetImplementedException;
-use Kopernikus\MassMailer\Service\EdenMailerFactory;
+use Kopernikus\MassMailer\Service\Mail\ContentPreparer;
+use Nette\Mail\Message;
+use Nette\Mail\SmtpException;
+use Nette\Mail\SmtpMailer;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
@@ -10,7 +12,7 @@ use Symfony\Component\Console\Output\OutputInterface;
  * Class TestmailSendCommand
  * @package Kopernikus\MassMailer\Command
  */
-class TestmailSendCommand extends AbstractConfigAwareCommand
+class TestmailSendCommand extends AbstractMailerCommand
 {
     /**
      * Test mail.yml send configuration
@@ -32,29 +34,24 @@ class TestmailSendCommand extends AbstractConfigAwareCommand
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $smpt = (new EdenMailerFactory($this->getMailAccountConfig()))
-            ->getSmtpInstance();
-
-
         $recievers = $this->getTestMailRecievers()->getRecievers();
-
-        $output->writeln("RECIEVVERS:");
-
         $contentConfig = $this->getContentConfig();
+        $mailer = $this->getMailer();
+        $contentPreparer = new ContentPreparer();
 
         foreach ($recievers as $reciever) {
-            $smpt->connect();
+            $message = $contentPreparer->generateMessage($reciever, $contentConfig);
 
-            $output->writeln("Sending mail to: " . $reciever->getEmail());
-
-            $smpt
-                ->setBody($contentConfig->getContent())
-                ->setSubject($contentConfig->getSubject())
-                ->addTo($reciever->getEmail(), $reciever->getFullName());
-
-            $smpt->send();
-
-            $smpt->reset();
+            try {
+                $mailer->send($message);
+                $status = "<info>Mail sent</info>";
+            } catch (SmtpException $e) {
+                $status = "<error>Mail wasn't sent</error> " . $e->getMessage();
+            } finally {
+                $output->writeln($status);
+            }
         }
     }
+
+
 }

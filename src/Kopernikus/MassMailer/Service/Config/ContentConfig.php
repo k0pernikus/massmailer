@@ -9,6 +9,8 @@
 namespace Kopernikus\MassMailer\Service\Config;
 
 
+use Kopernikus\MassMailer\Exception\AttachmentNotFoundException;
+
 class ContentConfig
 {
     private $greeting = '';
@@ -17,13 +19,34 @@ class ContentConfig
     private $content = '';
 
     /**
+     * @var array
+     */
+    private $attachments = [];
+
+    /**
      * @param array $contentConfig
      */
     public function __construct(array $contentConfig)
     {
+        $this->setGreeting($contentConfig['greeting']);
         $this->setContent($contentConfig['content']);
         $this->setSubject($contentConfig['subject']);
         $this->setSignature($contentConfig['signature']);
+
+
+        foreach ($contentConfig['attachments'] as $attachment) {
+
+            var_dump($attachment);
+
+            $attachment = $this->getResourcesDir() . $attachment;
+
+            if (!file_exists($attachment)) {
+                throw new AttachmentNotFoundException($attachment);
+            }
+
+            $this->attachments[] = $attachment;
+        }
+
     }
 
 
@@ -78,9 +101,9 @@ class ContentConfig
     /**
      * @return string
      */
-    public function getContent()
+    public function getContent(RecieverConfig $reciever)
     {
-        return $this->content;
+        return $this->greeting . " " . $reciever->getFirstname() . "\n\n" . $this->content;
     }
 
     /**
@@ -91,5 +114,19 @@ class ContentConfig
         $this->content = $content;
     }
 
+    /**
+     * @return array
+     */
+    public function getAttachments()
+    {
+        return $this->attachments;
+    }
 
+    /**
+     * @return string
+     */
+    public function getResourcesDir()
+    {
+        return __DIR__ . "/../../Ressources/attachments/";
+    }
 }

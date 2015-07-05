@@ -10,20 +10,24 @@ A SMTP E-Mail account.
 
 ## Installation
 
-git clone git@github.com:k0pernikus/massmailer.git
-cd massmailer
-composer install -o
-cp src/Kopernikus/MassMailer/config/{mail.yml.dist,mail.yml}
-vim src/Kopernikus/MassMailer/config/mail.yml
+    git clone git@github.com:k0pernikus/massmailer.git
+    cd massmailer
+    composer install -o
+    cp src/Kopernikus/MassMailer/config/{mail.yml.dist,mail.yml}
+    vim src/Kopernikus/MassMailer/config/mail.yml
 
 Edit the content of your mail.yml
+
+## mail.yml
+
+TODO
 
 ## Usage
 
 For a list of commands, run:
 
-./bin/console
+    ./bin/console
 
 To check if your email setting is up and running, send yourself a testmail via:
 
-./bin console testmail:send
+    ./bin console testmail:send

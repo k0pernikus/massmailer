@@ -17,6 +17,10 @@ use Nette\Mail\IMailer;
 use Symfony\Component\Console\Helper\ProgressBar;
 use Symfony\Component\Console\Output\OutputInterface;
 
+/**
+ * Class AbstractMailerCommand
+ * @package Kopernikus\MassMailer\Command
+ */
 class AbstractMailerCommand extends AbstractConfigAwareCommand
 {
     /**
@@ -31,8 +35,10 @@ class AbstractMailerCommand extends AbstractConfigAwareCommand
     public function sendMails(OutputInterface $output, array $recievers)
     {
         $contentConfig = $this->getContentConfig();
+        $sender = $this->getSender();
         $mailer = $this->getMailer();
-        $contentPreparer = new ContentPreparer();
+
+        $contentPreparer = new ContentPreparer($sender);
         $progress = new ProgressBar($output, count($recievers));
 
         foreach ($recievers as $reciever) {
@@ -76,6 +82,4 @@ class AbstractMailerCommand extends AbstractConfigAwareCommand
     {
         (new RecieverPrinter($output))->printRecievers($recievers);
     }
-
-
 }

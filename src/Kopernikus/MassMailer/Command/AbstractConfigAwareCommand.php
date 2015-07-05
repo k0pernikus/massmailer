@@ -1,20 +1,18 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: wolle
- * Date: 7/5/15
- * Time: 4:43 PM
- */
-
 namespace Kopernikus\MassMailer\Command;
 
 
 use Kopernikus\MassMailer\Service\Config\ContentConfig;
 use Kopernikus\MassMailer\Service\Config\MailAccountConfig;
 use Kopernikus\MassMailer\Service\Config\RecieversConfig;
+use Kopernikus\MassMailer\Service\Config\Sender;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Yaml\Yaml;
 
+/**
+ * Class AbstractConfigAwareCommand
+ * @package Kopernikus\MassMailer\Command
+ */
 class AbstractConfigAwareCommand extends Command
 {
     /**
@@ -68,7 +66,15 @@ class AbstractConfigAwareCommand extends Command
     public function getContentConfig()
     {
         return new ContentConfig($this->config['content']);
+    }
 
+    /**
+     * @return Sender
+     */
+
+    public function getSender()
+    {
+        return new Sender($this->config['sender']);
     }
 
 }

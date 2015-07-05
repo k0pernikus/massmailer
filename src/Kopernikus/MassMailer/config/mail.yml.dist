@@ -5,9 +5,9 @@ mail_account:
   encryption: ssl
 
 sender:
-  # STIL HARDCOFDED
   email: philipp.kretzchmar@gmail.com
   name: Philipp Kretzschmar
+  # will also be added to BCC on each mail send
 
 live_mail_recievers:
   recievers:

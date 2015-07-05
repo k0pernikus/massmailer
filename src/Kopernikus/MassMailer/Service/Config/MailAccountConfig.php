@@ -1,21 +1,17 @@
 <?php
-/**
-     * Created by PhpStorm.
-     * User: wolle
-     * Date: 7/5/15
-     * Time: 4:51 PM
-     */
-
 namespace Kopernikus\MassMailer\Service\Config;
 
 
+/**
+ * Class MailAccountConfig
+ * @package Kopernikus\MassMailer\Service\Config
+ */
 class MailAccountConfig
 {
     /**
      * @var string
      */
     private $host;
-
 
     /**
      * @var string
@@ -59,30 +55,6 @@ class MailAccountConfig
     public function getHost()
     {
         return $this->host;
-    }
-
-    /**
-     * @return boolean
-     */
-    public function isUseTLS()
-    {
-        return $this->useTLS;
-    }
-
-    /**
-     * @return int
-     */
-    public function getPort()
-    {
-        return $this->port;
-    }
-
-    /**
-     * @return boolean
-     */
-    public function isUseSSL()
-    {
-        return $this->useSSL;
     }
 
     /**

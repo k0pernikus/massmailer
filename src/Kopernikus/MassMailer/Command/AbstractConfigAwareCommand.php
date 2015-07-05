@@ -1,7 +1,6 @@
 <?php
 namespace Kopernikus\MassMailer\Command;
 
-
 use Kopernikus\MassMailer\Service\Config\ContentConfig;
 use Kopernikus\MassMailer\Service\Config\MailAccountConfig;
 use Kopernikus\MassMailer\Service\Config\RecieversConfig;

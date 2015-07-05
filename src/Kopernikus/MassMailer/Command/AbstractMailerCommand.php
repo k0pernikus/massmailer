@@ -1,11 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: wolle
- * Date: 7/5/15
- * Time: 8:59 PM
- */
-
 namespace Kopernikus\MassMailer\Command;
 
 

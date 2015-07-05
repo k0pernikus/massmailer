@@ -1,11 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: wolle
- * Date: 7/5/15
- * Time: 9:41 PM
- */
-
 namespace Kopernikus\MassMailer\Service\Printer;
 
 

@@ -1,13 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: wolle
- * Date: 7/5/15
- * Time: 5:16 PM
- */
-
 namespace Kopernikus\MassMailer\Service\Config;
-
 
 use Kopernikus\MassMailer\Exception\AttachmentNotFoundException;
 
@@ -35,9 +27,6 @@ class ContentConfig
 
 
         foreach ($contentConfig['attachments'] as $attachment) {
-
-            var_dump($attachment);
-
             $attachment = $this->getResourcesDir() . $attachment;
 
             if (!file_exists($attachment)) {
@@ -46,7 +35,6 @@ class ContentConfig
 
             $this->attachments[] = $attachment;
         }
-
     }
 
 

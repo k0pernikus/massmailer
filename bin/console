@@ -1,0 +1,15 @@
+#!/usr/bin/env php
+<?php
+set_time_limit(0);
+require_once __DIR__ . '/../vendor/autoload.php';
+
+use Symfony\Component\Console\Application;
+
+date_default_timezone_set('UTC');
+$app = new Application();
+$commandsToAdd = [
+    new \Kopernikus\MassMailer\Command\TestmailSendCommand(),
+];
+
+$app->addCommands($commandsToAdd);
+$app->run();

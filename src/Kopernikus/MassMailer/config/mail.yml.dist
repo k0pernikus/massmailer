@@ -1,0 +1,25 @@
+mail_account:
+  smtp: smtp.gmail.com
+  email: your_email@gmail.com
+  password: YOUR_PASSWORD
+  port: 465
+  useSSL: true
+
+
+sender:
+  email: your.mail@localhost
+  name: FIRSTNAME LASTNAME
+
+BCC:
+  - theonesRecievingBlindCopies@localhost
+
+CC:
+  - theonesRecievingBlindCopies@localhostk
+
+content:
+  subject: This is the subject
+  message: >
+    This is the content of your mail. Be careful with your words ;)
+  signature:
+    Keep it short.
+  attachements: ~

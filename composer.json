@@ -1,5 +1,7 @@
 {
   "name": "k0pernikus/massmailer",
+  "description": "A tool to easily send multiple emails to a YAML-list of recipents.",
+  "keywords": ["mail", "massmailing", "email", "batch"],
   "autoload": {
     "psr-0": {
       "Kopernikus": "src/"

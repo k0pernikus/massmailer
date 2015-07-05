@@ -91,7 +91,10 @@ class ContentConfig
      */
     public function getContent(Reciever $reciever)
     {
-        return $this->greeting . " " . $reciever->getFirstname() . "\n\n" . $this->content;
+        $content = $this->greeting . " " . $reciever->getFirstname() . ",\r\n\r\n" . $this->content;
+        $content = str_replace("<br />", "\r\n", $content);
+
+        return $content;
     }
 
     /**

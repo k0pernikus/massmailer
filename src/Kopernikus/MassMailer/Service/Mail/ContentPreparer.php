@@ -28,9 +28,6 @@ class ContentPreparer
         $message = new Message();
         $message->setFrom($this->sender->getEmail(), $this->sender->getName());
         $content = $contentConfig->getContent($reciever);
-        $content = str_replace("<br />", "\r\n", $content);
-
-
         $message->setBody("$content");
         $message->setSubject($contentConfig->getSubject());
         $message->addTo($reciever->getEmail(), $reciever->getFullName());

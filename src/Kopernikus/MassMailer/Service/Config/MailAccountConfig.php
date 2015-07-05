@@ -1,10 +1,10 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: wolle
- * Date: 7/5/15
- * Time: 4:51 PM
- */
+     * Created by PhpStorm.
+     * User: wolle
+     * Date: 7/5/15
+     * Time: 4:51 PM
+     */
 
 namespace Kopernikus\MassMailer\Service\Config;
 

@@ -76,7 +76,7 @@ class AbstractMailerCommand extends AbstractConfigAwareCommand
 
     /**
      * @param OutputInterface $output
-     * @param array           $recievers
+     * @param Reciever[]           $recievers
      */
     protected function printRecievers(OutputInterface $output, array $recievers)
     {

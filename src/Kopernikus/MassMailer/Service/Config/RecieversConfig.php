@@ -19,6 +19,8 @@ class RecieversConfig
     {
         $recievers = $testMailRecieversConfig['recievers'];
 
+        var_dump($recievers);
+
         foreach ($recievers as $reciever) {
             $this->recievers[] = new Reciever($reciever);
         }

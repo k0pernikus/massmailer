@@ -11,7 +11,6 @@ use Symfony\Component\Console\Output\OutputInterface;
  * Class MailSendCommand
  * @package Kopernikus\MassMailer\Command
  */
-
 class MailSendCommand extends AbstractMailerCommand
 {
     protected function configure()
@@ -25,7 +24,6 @@ class MailSendCommand extends AbstractMailerCommand
                 InputOption::VALUE_NONE,
                 "Will send mails to all the users you defined in your mail.yml."
             );
-
     }
 
     /**
@@ -35,18 +33,18 @@ class MailSendCommand extends AbstractMailerCommand
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $shouldSendMails = $input->getOption('forceSendMails');
+
         $recievers = $this
             ->getLiveMailRecievers()
             ->getRecievers();
 
         $this->printRecievers($output, $recievers);
 
-
         if (!$shouldSendMails) {
             throw new SendMailFlagNotGivenExceoption();
         }
 
+        throw new SendMailFlagNotGivenExceoption();
         $this->sendMails($output, $recievers);
     }
-
 }

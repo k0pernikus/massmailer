@@ -1,5 +1,6 @@
 <?php
 namespace Kopernikus\MassMailer\Service\Config;
+use Kopernikus\MassMailer\Exception\InvalidGenderParamater;
 
 /**
  * Class Reciever
@@ -92,6 +93,10 @@ class Reciever
      */
     public function setGender($gender)
     {
+        if (null === $gender) {
+            $gender = 'neutral';
+        }
+
         $allowedValues = [
             'female',
             'neutral',
@@ -99,9 +104,8 @@ class Reciever
         ];
 
         if (!in_array($gender, $allowedValues)) {
-            throw new \InvalidArgumentException($gender);
+            throw new InvalidGenderParamater();
         }
-
 
         $this->gender = $gender;
     }

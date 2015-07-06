@@ -1,0 +1,353 @@
+recievers:
+  -
+    firstname: Rainer
+    lastname: Zeh
+    gender:
+    email: rz@lightwerk.com
+    company: Lightwerk
+  -
+    firstname: Lars
+    lastname: Jankowski
+    gender:
+    email: lars@jankowfsky.de
+    company: swoodoo
+  -
+    firstname: Timo
+    lastname: Buhmann
+    gender:
+    email: buhmann@teqneers.de
+    company: Teqneers
+  -
+    firstname: Ingo
+    lastname: Horn
+    gender:
+    email:
+    company: Travian Games
+  -
+    firstname: Alexander
+    lastname: Bernhardt
+    gender:
+    email:  hallo@hauptsache.net
+    company: hauptsache.net
+  -
+    firstname: Ole
+    lastname: Mensching
+    gender:
+    email: ole.mensching@careerteam.de
+    company: career team
+  -
+    firstname: ""
+    lastname: ""
+    gender:
+    email: info@project-a.com
+    company: Project A Ventures
+  -
+    firstname: Michael
+    lastname: Kühle
+    gender:
+    email: kuehle@webvariants.de
+    company: webvariants
+  -
+    firstname: Ulrich
+    lastname: Kramer
+    gender:
+    email: u.kramer@pilot.de
+    company: pilot
+  -
+    firstname: Jens
+    lastname: Bradler
+    gender:
+    email: jbradler@ennit.de
+    company: ennit
+  -
+    firstname: Johan
+    lastname: Wenz
+    gender:
+    email: johan.wenz@estivo.de
+    company: estivo
+    contacted: false
+
+dummies:
+
+
+
+  -
+    firstname:
+    lastname:
+    gender:
+    email:
+    company:
+    contacted: false
+  -
+    firstname:
+    lastname:
+    gender:
+    email:
+    company:
+    contacted: false
+  -
+    firstname:
+    lastname:
+    gender:
+    email:
+    company:
+    contacted: false
+  -
+    firstname:
+    lastname:
+    gender:
+    email:
+    company:
+    contacted: false
+  -
+    firstname:
+    lastname:
+    gender:
+    email:
+    company:
+    contacted: false
+  -
+    firstname:
+    lastname:
+    gender:
+    email:
+    company:
+    contacted: false
+  -
+    firstname:
+    lastname:
+    gender:
+    email:
+    company:
+    contacted: false
+  -
+    firstname:
+    lastname:
+    gender:
+    email:
+    company:
+    contacted: false
+  -
+    firstname:
+    lastname:
+    gender:
+    email:
+    company:
+    contacted: false
+  -
+    firstname:
+    lastname:
+    gender:
+    email:
+    company:
+    contacted: false
+  -
+    firstname:
+    lastname:
+    gender:
+    email:
+    company:
+    contacted: false
+  -
+    firstname:
+    lastname:
+    gender:
+    email:
+    company:
+    contacted: false
+  -
+    firstname:
+    lastname:
+    gender:
+    email:
+    company:
+    contacted: false
+  -
+    firstname:
+    lastname:
+    gender:
+    email:
+    company:
+    contacted: false
+  -
+    firstname:
+    lastname:
+    gender:
+    email:
+    company:
+    contacted: false
+  -
+    firstname:
+    lastname:
+    gender:
+    email:
+    company:
+    contacted: false
+  -
+    firstname:
+    lastname:
+    gender:
+    email:
+    company:
+    contacted: false
+  -
+    firstname:
+    lastname:
+    gender:
+    email:
+    company:
+    contacted: false
+  -
+    firstname:
+    lastname:
+    gender:
+    email:
+    company:
+    contacted: false
+  -
+    firstname:
+    lastname:
+    gender:
+    email:
+    company:
+    contacted: false
+  -
+    firstname:
+    lastname:
+    gender:
+    email:
+    company:
+    contacted: false
+  -
+    firstname:
+    lastname:
+    gender:
+    email:
+    company:
+    contacted: false
+  -
+    firstname:
+    lastname:
+    gender:
+    email:
+    company:
+    contacted: false
+  -
+    firstname:
+    lastname:
+    gender:
+    email:
+    company:
+    contacted: false
+  -
+    firstname:
+    lastname:
+    gender:
+    email:
+    company:
+    contacted: false
+  -
+    firstname:
+    lastname:
+    gender:
+    email:
+    company:
+    contacted: false
+  -
+    firstname:
+    lastname:
+    gender:
+    email:
+    company:
+    contacted: false
+  -
+    firstname:
+    lastname:
+    gender:
+    email:
+    company:
+    contacted: false
+  -
+    firstname:
+    lastname:
+    gender:
+    email:
+    company:
+    contacted: false
+  -
+    firstname:
+    lastname:
+    gender:
+    email:
+    company:
+    contacted: false
+  -
+    firstname:
+    lastname:
+    gender:
+    email:
+    company:
+    contacted: false
+  -
+    firstname:
+    lastname:
+    gender:
+    email:
+    company:
+    contacted: false
+  -
+    firstname:
+    lastname:
+    gender:
+    email:
+    company:
+    contacted: false
+  -
+    firstname:
+    lastname:
+    gender:
+    email:
+    company:
+    contacted: false
+  -
+    firstname:
+    lastname:
+    gender:
+    email:
+    company:
+    contacted: false
+  -
+    firstname:
+    lastname:
+    gender:
+    email:
+    company:
+    contacted: false
+  -
+    firstname:
+    lastname:
+    gender:
+    email:
+    company:
+    contacted: false
+  -
+    firstname:
+    lastname:
+    gender:
+    email:
+    company:
+    contacted: false
+  -
+    firstname:
+    lastname:
+    gender:
+    email:
+    company:
+    contacted: false
+  -
+    firstname:
+    lastname:
+    gender:
+    email:
+    company:
+    contacted: false

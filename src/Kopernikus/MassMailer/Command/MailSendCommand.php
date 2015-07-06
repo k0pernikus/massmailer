@@ -44,7 +44,7 @@ class MailSendCommand extends AbstractMailerCommand
             throw new SendMailFlagNotGivenExceoption();
         }
 
-        throw new SendMailFlagNotGivenExceoption();
+
         $this->sendMails($output, $recievers);
     }
 }

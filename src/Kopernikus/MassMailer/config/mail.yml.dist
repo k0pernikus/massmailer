@@ -32,7 +32,7 @@ content:
   subject: >
     [php-unconference-2015] Sponsoren gesucht! Wir brauchen Ihre Unterstützung
   content: >
-    der BOOT - Best Of Open Technologies e.V.​ veranstaltet gemeinsam mit dem FSR der Informatik der Universität Hamburg​ wie auch in den letzten Jahren die ​PHP-Unconference Hamburg​[1].
+    der BOOT - Best Of Open Technologies e.V.​ veranstaltet gemeinsam mit dem FSR der Informatik der Universität Hamburg​ wie auch in den letzten Jahren die ​PHP Unconference Hamburg​[1].
 
     Die PHP Unconference wird vom 19. bis 20.09.2015 am Institut für organische Chemie der Universität Hamburg stattfinden.
 
@@ -44,32 +44,33 @@ content:
 
     Im wesentlichen wird es drei Packete geben:
 
-    - Gold Sponsor zu EUR 4.000 (max. 5 Slots)<br />
+    * Gold Sponsor zu EUR 4.000 (max. 5 Slots)<br />
       - Elevator-Pitch<br />
-      - Standplatz vor ort inkklusive<br />
+      - Standplatz vor ort inklusive<br />
       - Freie Aufstellmöglichkeit für Stand- und Roll-Plakate unterschiedlicher Größe und Anzahl am Veranstaltungsort<br />
       - Nennung auf Website mit Logo und Verlinkung und dem Sponsortstatus: Gold<br />
       - Nennung in E-Mails mit dem Sponsorstatus: Gold<br />
-      - 8 Freitickets, max. 4 zusätlzlich käuflich<br />
+      - 8 Freitickets, max. 4 zusätzlich käuflich<br />
       - inkl. aller Silber-Sponsoren-Benefits
 
-    - Silber Sponsor zu EUR 2.000 (max. 10 Slots)<br />
+    * Silber Sponsor zu EUR 2.000 (max. 10 Slots)<br />
       - Befestigung von Plakaten bis zu einer Größe von DIN A3 am Veranstaltungsort<br />
       - Nennung auf Website mit Logo und Verlinkung und dem Sponsortstatus: Silber<br />
       - Nennung in E-Mails mit dem Sponsorstatus: Silber<br />
-      - 4 Freitickets, max. 2 zusätlzlich käuflich<br />
+      - 4 Freitickets, max. 2 zusätzlich käuflich<br />
       - inkl. aller Bronze-Sponsoren-Benefits
 
-    - Bronze-Sponsor zu EUR 1.000 (max. 20 Slots):<br />
+    * Bronze-Sponsor zu EUR 1.000 (max. 20 Slots):<br />
       - Befestigung von Postern bis zu einer Größe von DIN A4 am Veranstaltungsort<br />
       - Textuelle Nennung auf Website mit Verlinkung ohne Logo und dem Sponsorenstatus: Bronze<br />
-      - inkl. aller Bronze-Sponsoren-Benefits
+      - 2 Freitickets, max. 1 zusätzlich käuflich<br />
 
     Sie können dies auch der beiliegenden PDF-Datei entnehmen.
 
     Für Rückfragen stehe ich Ihnen gerne zur Verfügung.
 
-    Mit freundlichen Grüßen,<br />
+    Mit freundlichen Grüßen,
+
     Philipp Kretzschmar
 
     PHP Unconference - OrgaTeam
